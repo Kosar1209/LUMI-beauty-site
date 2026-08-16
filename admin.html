@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMI Beauty | پنل مدیریت</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">LUMI <span>ADMIN</span></div>
+    <div class="admin-user"><div class="avatar">L</div><div><b>مدیر فروشگاه</b><small>admin@lumi.demo</small></div></div>
+    <nav>
+      <button class="nav-item active" data-page="dashboard">▦ <span>داشبورد</span></button>
+      <button class="nav-item" data-page="orders">▣ <span>سفارش‌ها</span><b class="badge">12</b></button>
+      <button class="nav-item" data-page="products">◈ <span>محصولات</span></button>
+      <button class="nav-item" data-page="customers">♙ <span>مشتریان</span></button>
+      <button class="nav-item" data-page="categories">◇ <span>دسته‌بندی‌ها</span></button>
+      <button class="nav-item" data-page="discounts">% <span>تخفیف‌ها</span></button>
+      <button class="nav-item" data-page="reports">↗ <span>گزارش فروش</span></button>
+      <button class="nav-item" data-page="settings">⚙ <span>تنظیمات</span></button>
+    </nav>
+    <button class="store-link" id="storeLink">← مشاهده فروشگاه</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger">☰</button>
+      <div class="crumb" id="crumb">داشبورد <span>/</span> نمای کلی</div>
+      <div class="top-actions"><button class="circle" id="notif">♢<i></i></button><div class="top-avatar">L</div></div>
+    </header>
+
+    <section class="content" id="app"></section>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <button class="close" data-close="productModal">×</button>
+    <span class="eyebrow">PRODUCT</span><h2 id="productModalTitle">افزودن محصول</h2>
+    <div class="form-grid">
+      <div class="field"><label>نام محصول</label><input id="pName" placeholder="مثلاً سرم آبرسان"></div>
+      <div class="field"><label>برند</label><input id="pBrand" value="LUMI"></div>
+      <div class="field"><label>دسته‌بندی</label><select id="pCat"><option>پوست</option><option>آرایش</option><option>مو</option><option>عطر</option></select></div>
+      <div class="field"><label>قیمت (تومان)</label><input id="pPrice" type="number" placeholder="500000"></div>
+      <div class="field"><label>موجودی</label><input id="pStock" type="number" placeholder="25"></div>
+      <div class="field"><label>SKU</label><input id="pSku" placeholder="LUM-001"></div>
+    </div>
+    <div class="field"><label>توضیحات</label><textarea id="pDesc" placeholder="توضیحات محصول..."></textarea></div>
+    <button class="btn primary full" id="saveProduct">ذخیره محصول</button>
+  </div>
+</div>
+
+<div class="modal" id="orderModal">
+  <div class="modal-box">
+    <button class="close" data-close="orderModal">×</button>
+    <span class="eyebrow">ORDER DETAILS</span><h2 id="orderTitle">جزئیات سفارش</h2>
+    <div id="orderDetail"></div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
