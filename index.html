@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMI Beauty | فروشگاه آنلاین زیبایی</title>
+  <meta name="description" content="LUMI Beauty - فروشگاه مدرن لوازم آرایشی و مراقبت پوست و مو">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+      <a class="logo" href="#home">LUMI <span>BEAUTY</span></a>
+      <nav id="mainNav">
+        <a href="#home">خانه</a>
+        <a href="#shop">فروشگاه</a>
+        <a href="#categories">دسته‌بندی</a>
+        <a href="#offers">تخفیف‌ها</a>
+        <a href="#about">درباره ما</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="favoritesBtn" title="علاقه‌مندی‌ها">♡ <b id="favCount">0</b></button>
+        <button class="icon-btn" id="accountBtn" title="حساب کاربری">♙</button>
+        <button class="cart-btn" id="cartBtn">سبد خرید <b id="cartCount">0</b></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">NEW BEAUTY EDIT · 2026</span>
+        <h1>زیبایی، با انتخابی که <em>برای تو</em> ساخته شده.</h1>
+        <p>محصولات منتخب آرایش، مراقبت پوست و مو با تجربه خرید ساده، مدرن و حرفه‌ای.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#shop">شروع خرید</a>
+          <a class="btn ghost" href="#categories">دسته‌بندی‌ها</a>
+        </div>
+        <div class="trust-row">
+          <span>✓ ضمانت اصالت</span><span>✓ ارسال سریع</span><span>✓ پشتیبانی</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div>
+        <div class="hero-card">
+          <span>EDITOR'S PICK</span>
+          <div class="bottle big">LUMI</div>
+          <strong>Glow Serum</strong>
+          <small>Hydrating · Lightweight · Daily</small>
+          <div class="hero-price">۵۲۰,۰۰۰ تومان</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container benefits-grid">
+        <div><strong>01</strong><span><b>انتخاب حرفه‌ای</b>محصولات منتخب</span></div>
+        <div><strong>02</strong><span><b>خرید امن</b>فرآیند سفارش ساده</span></div>
+        <div><strong>03</strong><span><b>ارسال سریع</b>پیگیری سفارش</span></div>
+        <div><strong>04</strong><span><b>پشتیبانی</b>همراه شما هستیم</span></div>
+      </div>
+    </section>
+
+    <section class="section container" id="categories">
+      <div class="section-head">
+        <div><span class="eyebrow">SHOP BY CATEGORY</span><h2>برای هر روتین، یک انتخاب</h2></div>
+      </div>
+      <div class="category-grid">
+        <button class="category-card" data-category="آرایش"><span>01</span><h3>آرایش</h3><p>لب، چشم، صورت و ابرو</p><i>↗</i></button>
+        <button class="category-card" data-category="پوست"><span>02</span><h3>مراقبت پوست</h3><p>شوینده، سرم، آبرسان و ضدآفتاب</p><i>↗</i></button>
+        <button class="category-card" data-category="مو"><span>03</span><h3>مراقبت مو</h3><p>شامپو، ماسک و محصولات تخصصی</p><i>↗</i></button>
+        <button class="category-card" data-category="عطر"><span>04</span><h3>عطر و رایحه</h3><p>رایحه‌های خاص و ماندگار</p><i>↗</i></button>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="container">
+        <div class="section-head shop-head">
+          <div><span class="eyebrow">CURATED STORE</span><h2>محصولات منتخب</h2></div>
+          <button class="text-btn" id="showAll">نمایش همه ←</button>
+        </div>
+        <div class="toolbar">
+          <div class="search"><span>⌕</span><input id="search" placeholder="جستجوی محصول یا برند..."></div>
+          <select id="sort">
+            <option value="featured">مرتب‌سازی: پیشنهادی</option>
+            <option value="low">ارزان‌ترین</option>
+            <option value="high">گران‌ترین</option>
+            <option value="new">جدیدترین</option>
+          </select>
+          <div class="chips" id="chips">
+            <button class="chip active" data-filter="همه">همه</button>
+            <button class="chip" data-filter="آرایش">آرایش</button>
+            <button class="chip" data-filter="پوست">پوست</button>
+            <button class="chip" data-filter="مو">مو</button>
+            <button class="chip" data-filter="عطر">عطر</button>
+          </div>
+        </div>
+        <div class="products" id="products"></div>
+        <div id="emptyProducts" class="empty hidden">محصولی مطابق جستجوی شما پیدا نشد.</div>
+      </div>
+    </section>
+
+    <section class="offer container" id="offers">
+      <div><span class="eyebrow">LIMITED OFFER</span><h2>تا ۳۰٪ تخفیف روی انتخاب‌های منتخب</h2><p>برای شروع یک روتین جدید، فرصت خوبی است.</p><a href="#shop" class="btn white">مشاهده محصولات</a></div>
+      <div class="offer-badge">30<small>% OFF</small></div>
+    </section>
+
+    <section class="section about container" id="about">
+      <div class="about-panel"><span class="eyebrow">WHY LUMI</span><h2>یک فروشگاه، یک تجربه متفاوت.</h2><p>این پروژه با تمرکز روی تجربه کاربری، طراحی ریسپانسیو و جریان واقعی خرید ساخته شده است.</p>
+        <div class="stats"><div><b>+80</b><span>محصول</span></div><div><b>4.9</b><span>امتیاز</span></div><div><b>24/7</b><span>پشتیبانی</span></div></div>
+      </div>
+      <div class="about-art"><div class="mini-box">LUMI<br><small>BEAUTY</small></div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="logo footer-logo" href="#home">LUMI <span>BEAUTY</span></a><p>فروشگاه آنلاین مدرن محصولات زیبایی.</p></div>
+      <div><h4>دسترسی سریع</h4><a href="#shop">فروشگاه</a><a href="#categories">دسته‌بندی‌ها</a><a href="#offers">تخفیف‌ها</a></div>
+      <div><h4>خدمات</h4><a href="#" data-demo="orders">پیگیری سفارش</a><a href="#" data-demo="account">حساب کاربری</a><a href="#" data-demo="favorites">علاقه‌مندی‌ها</a></div>
+      <div><h4>نمونه‌کار</h4><a href="#" id="adminLink">پنل مدیریت Demo</a><p>admin / demo123</p></div>
+    </div>
+    <div class="container copyright">© 2026 LUMI Beauty · Demo Portfolio Project</div>
+  </footer>
+
+  <!-- Product modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-box product-detail">
+      <button class="close" data-close="productModal">×</button>
+      <div id="productDetail"></div>
+    </div>
+  </div>
+
+  <!-- Cart modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-box">
+      <button class="close" data-close="cartModal">×</button>
+      <div class="modal-title"><span class="eyebrow">YOUR BAG</span><h2>سبد خرید</h2></div>
+      <div id="cartItems"></div>
+      <div class="summary"><span>مجموع</span><strong id="cartTotal">۰ تومان</strong></div>
+      <button class="btn primary full" id="checkoutBtn">ادامه ثبت سفارش</button>
+    </div>
+  </div>
+
+  <!-- Favorites -->
+  <div class="modal" id="favoritesModal">
+    <div class="modal-box">
+      <button class="close" data-close="favoritesModal">×</button>
+      <div class="modal-title"><span class="eyebrow">SAVED ITEMS</span><h2>علاقه‌مندی‌ها</h2></div>
+      <div id="favoriteItems"></div>
+    </div>
+  </div>
+
+  <!-- Account -->
+  <div class="modal" id="accountModal">
+    <div class="modal-box account-box">
+      <button class="close" data-close="accountModal">×</button>
+      <div id="accountContent"></div>
+    </div>
+  </div>
+
+  <!-- Admin -->
+  <div class="modal" id="adminModal">
+    <div class="modal-box admin-box">
+      <button class="close" data-close="adminModal">×</button>
+      <div id="adminContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
